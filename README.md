@@ -86,8 +86,5 @@ The assembly BOM contains 46 component groups covering 89 fitted references, mat
 
 **Tools:** KiCad 10, ESP32-S3 hardware design, wireless module integration, LCSC/JLCPCB-oriented manufacturing workflow and Git/GitHub.
 
-## Project status and attribution
-
-The published design is a portfolio/reference implementation, not a tested or production-qualified device. Hardware testing and manufacturing validation remain future activities.
 
 No project-wide licence has been selected. Third-party assets retain their respective rights; see [references](docs/references.md).
