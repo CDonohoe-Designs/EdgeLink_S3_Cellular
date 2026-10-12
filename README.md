@@ -45,6 +45,14 @@ USB-C provides input power and native USB data. The BQ25185 manages the battery 
 
 The hierarchical schematic separates power and USB, ESP32-S3 processing, cellular/GNSS and sensor interfaces. Key circuits include battery charging and regulation, modem power and UART connectivity, RF antenna interfaces, USB-C protection and digital sensor integration.
 
+### ESP32-S3 controller core
+
+The ESP32-S3-MINI-1-N8 schematic brings together the controller supply and decoupling, native USB connections, modem control signals, I²C interfaces, reset/boot circuitry and status LED.
+
+![ESP32-S3-MINI-1 controller core schematic, including reset and boot controls](docs/portfolio/EdgeLink_S3_Cellular/images/schematic-02_esp32_s3_core.png)
+
+### USB-C interface
+
 ![USB-C circuit extract](docs/portfolio/EdgeLink_S3_Cellular/images/schematic-usb-c.png)
 
 ## Four-layer PCB implementation
