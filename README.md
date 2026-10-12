@@ -1,139 +1,107 @@
 # EdgeLink S3 Cellular
 
-**Rev A is an unbuilt engineering portfolio/reference design** for an ESP32-S3
-cellular, GNSS and environmental-sensing platform. The schematic, PCB and
-manufacturing package are prepared. Fabrication, assembly, bring-up, firmware,
-RF validation, sensor validation, power testing, EMC/compliance testing and full
-DFM qualification remain pending.
+**ESP32-S3 Embedded Hardware Design | LTE-M / NB-IoT | GNSS | Power Management | Four-Layer PCB | KiCad**
 
-## Overview
+![Rev A system architecture](docs/images/architecture-reva.svg)
 
-This project brings together an ESP32-S3 controller, a SIM7080G LTE-M/NB-IoT and
-GNSS modem, USB-C, single-cell battery power management and motion/environmental
-sensors on a four-layer PCB. It demonstrates hardware architecture, power-tree
-design, interface integration, RF-aware layout, project-local KiCad libraries
-and preparation of a fabrication/assembly handoff.
+## Engineering overview
 
-## System architecture
+EdgeLink S3 Cellular is a four-layer embedded hardware platform combining an ESP32-S3 controller, cellular/GNSS connectivity, USB-C, single-cell battery management and motion/environmental sensing.
 
-![Rev A design architecture](docs/images/architecture-reva.svg)
+I developed the Rev A schematic and PCB design as an engineering portfolio project demonstrating hardware architecture, power-tree design, wireless-module integration, digital interfaces, RF-aware layout and preparation of fabrication and assembly deliverables.
 
-The diagram describes the CAD design, not measured hardware behaviour. See
-[architecture notes](docs/architecture/README.md) for the rails, interfaces and
-source-sheet mapping.
+**Design status:** Rev A CAD and manufacturing documentation are prepared. The hardware is **unbuilt**; fabrication, assembly, firmware, bring-up, electrical/RF testing and compliance evaluation remain outstanding.
 
-## Hardware
+## Engineering evidence — start here
 
-| Function | Selected device or connection |
+| Resource | What it demonstrates |
 | --- | --- |
-| Controller and Wi-Fi/Bluetooth LE | U6: ESP32-S3-MINI-1-N8 |
-| LTE-M/NB-IoT and GNSS | U8: SIMCom SIM7080G |
-| Battery charging and power path | U5: Texas Instruments BQ25185 |
-| Main 3.3 V buck-boost rail | U4: Texas Instruments TPS63802DLAR |
-| Battery fuel gauge | U1: MAX17048G+T10 |
-| Motion sensing | U10: Bosch BMI323 six-axis IMU |
-| Temperature and humidity | U11: Sensirion SHT40-AD1B-R2 |
-| Pressure sensing | U12: Bosch Sensortec BMP384 |
-| GNSS antenna supply control | U9: TPS22919DCKR |
-| External interfaces | USB-C, battery connector, Nano-SIM, LTE/GNSS U.FL and external I2C |
+| [System architecture](docs/images/architecture-reva.svg) | Subsystem integration and functional signal flow |
+| [Complete schematic PDF](docs/schematics/EdgeLink_S3_Cellular_RevA_Schematic.pdf) | Hierarchical circuit implementation |
+| [Editable KiCad 10 project](hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pro) | Source schematic, four-layer PCB and supporting project assets |
+| [Architecture notes](docs/architecture/README.md) | Power rails, interfaces and schematic-sheet mapping |
+| [Manufacturing package](manufacturing/REV_A/) | Gerbers, drill data, supplier BOM and component placement |
+| [Verification record](docs/verification.md) | Recorded checks, warning triage and remaining limitations |
 
-### Power and connectivity
+An illustrated portfolio report and PCB/3D views can be linked here when the actual exports are added to the repository.
 
-USB-C supplies the BQ25185 input and carries the ESP32-S3 native USB data pair.
-The BQ25185 manages the single-cell battery connection and provides `VSYS` to
-the TPS63802, which generates `+3V3`. The SIM7080G supply is derived from `VBAT`
-through its filtering network. The MAX17048 monitors the battery.
+## Hardware architecture
 
-The controller communicates with the modem through the U7 TXB0108 UART level
-shifter. The modem connects to the Nano-SIM holder and separate LTE and GNSS
-U.FL connectors. BMI323, SHT40, BMP384 and the fuel gauge share the internal I2C
-pair; the external I2C connector uses a separate ESP32 signal pair. GNSS antenna
-bias is controlled through U9. Firmware is not included.
-
-## PCB and supplier configuration
-
-The CAD file records four-layer FR4, approximately **1.558 mm** total thickness,
-a **1.238 mm** core, 0.035 mm outer copper, 0.015 mm inner copper and copper
-finish **`None`**. Four 2.2 mm non-plated mounting holes are present.
-
-The intended supplier order is nominal **1.6 mm, ENIG, JLC04161H-3313**. Those
-ordering assumptions differ from the CAD settings and must be reconciled with
-the supplier before fabrication. The layout uses geometry intended for the RF
-and USB routes; no formal controlled-impedance verification or certification
-is claimed.
-
-## Open the design
-
-Use **KiCad 10** with its standard symbol, footprint and 3D-model libraries.
-Open
-[`EdgeLink_S3_Cellular.kicad_pro`](hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pro).
-Keep the project folder, `libraries/` and `3D_Models/` together. Local library and
-model paths are project-relative; manufacturing output is directed to
-`../../../manufacturing/REV_A/gerbers` from the project directory.
-
-The main schematic contains power/USB, ESP32-S3, modem/GNSS and sensor sheets,
-plus an empty block-diagram child sheet retained from the source hierarchy.
-The schematic PDF therefore has six pages, including that empty sheet.
-
-## Repository structure
-
-| Path | Contents |
+| Function | Device / implementation |
 | --- | --- |
-| `hardware/kicad/EdgeLink_S3_Cellular_RevA/` | Editable Rev A design, local libraries and models |
-| `docs/architecture/` and `docs/images/` | Source-based architecture notes and diagram |
-| `docs/schematics/` | Current six-page schematic PDF |
-| `docs/verification.md` | Check results, warning triage and model-reference limitations |
-| `docs/references.md` | Manufacturer links and available CAD attribution |
-| `manufacturing/REV_A/` | Current BOM, CPL, Gerber ZIP and matching loose outputs |
+| Embedded controller and Wi-Fi/Bluetooth LE | ESP32-S3-MINI-1-N8 (U6) |
+| LTE-M / NB-IoT and GNSS | SIMCom SIM7080G (U8) |
+| Single-cell charging and power path | TI BQ25185 (U5) |
+| Main 3.3 V buck-boost supply | TI TPS63802DLAR (U4) |
+| Battery fuel gauge | MAX17048G+T10 (U1) |
+| Six-axis motion sensing | Bosch BMI323 (U10) |
+| Temperature and humidity | Sensirion SHT40 (U11) |
+| Barometric pressure | Bosch BMP384 (U12) |
+| GNSS antenna bias switching | TPS22919 (U9) |
+| External connections | USB-C, battery, Nano-SIM, LTE/GNSS U.FL and I²C |
 
-## Manufacturing package
+### Power and interfaces
 
-The authoritative upload files are:
+USB-C provides power to the BQ25185 and carries the ESP32-S3 native USB data signals. The charger/power-path device supplies `VSYS`; the TPS63802 generates `+3V3`. The SIM7080G is supplied from the battery rail through its input filtering, and the MAX17048 monitors the battery.
 
-- [Fabrication ZIP](manufacturing/REV_A/gerbers/EdgeLink_S3_Cellular_RevA_Gerbers.zip)
-- [Assembly BOM](manufacturing/REV_A/bom/EdgeLink_S3_Cellular_RevA_BOM_JLCPCB_UPLOAD.csv)
-- [Component placement](manufacturing/REV_A/cpl/EdgeLink_S3_Cellular_RevA_CPL_JLCPCB_READY.csv)
+The modem communicates with the controller through a TXB0108 level-shifting stage and connects to a Nano-SIM holder and separate LTE/GNSS U.FL connectors. The IMU, environmental sensors and fuel gauge use the internal I²C bus; an external I²C connector uses a separate ESP32-S3 signal pair.
 
-The BOM has 46 part groups and 89 fitted references, with the existing
-`LCSC Part #` supplier column. The CPL contains the same 89 unique references,
-all on Top. The package contains **no solder-paste Gerbers**. Its PCB fabrication
-content has been checked; stencil and assembly requirements must be confirmed
-before ordering. See [manufacturing notes](manufacturing/REV_A/README.md).
+## Schematic engineering
 
-## Verification and known considerations
+The KiCad project uses functional sheets for power/USB, ESP32-S3 processing, cellular/GNSS and sensors. The schematic PDF also includes a retained empty block-diagram sheet. This structure keeps interfaces and power domains understandable during design review and future development.
 
-KiCad 10.0.6 checks on 11 October 2026 reported zero ERC violations, zero layout
-DRC errors, zero unconnected items, **six layout warnings** and **141 additional
-schematic-parity warnings**. The publication changes preserve electrical
-connectivity, PCB geometry, placement, routing and stack-up. Details and the
-post-preparation checks are recorded in [verification notes](docs/verification.md).
+The design brings together charging and regulation, native USB, cellular modem control, antenna connections, sensor interfaces and local component protection/decoupling. See the [schematic PDF](docs/schematics/EdgeLink_S3_Cellular_RevA_Schematic.pdf) for actual circuit details.
 
-The layout warnings concern silkscreen at board edges/mask openings and D5's
-library-footprint mismatch. Parity warnings concern custom fields, values/BOM
-exclusions, mechanical references and footprint filters. These results do not
-establish a fully clean or qualified design.
+## Four-layer PCB implementation
 
-U12 is BMP384 / C5577555; its existing footprint/model names retain `BMP390`.
-U6 retains an `ESP32-S2-MINI-1` footprint identifier. Naming alone establishes
-neither compatibility nor incompatibility. The release preserves their existing
-pads and placement. U6's original CPL coordinates remain unchanged; the
-assembler must confirm placement against actual pads and pin orientation,
-including the previously observed preview-overlay offset.
+The Rev A PCB integrates the digital, power, cellular/GNSS and sensing subsystems on a four-layer FR4 board, with four 2.2 mm non-plated mounting holes. Component grouping, local decoupling, ground-return considerations and RF/USB routing geometry form part of the layout work.
 
-Four local model paths have been repaired. One optional broken TPS22919 library
-model reference has been removed without changing its pads; the candidate model
-files remain available for a future orientation/registration check.
+The CAD stack records approximately 1.558 mm thickness. The intended supplier order is nominal 1.6 mm, ENIG, JLC04161H-3313; these settings require reconciliation before fabrication. **Formal controlled-impedance verification and measured signal integrity/RF performance are not claimed.**
 
-## Design status and use
+The editable [PCB project](hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pro) is the authoritative layout source.
 
-This is a prepared Rev A CAD/manufacturing snapshot. The hardware remains
-unbuilt. Fabrication, assembly, board bring-up, application firmware, RF and
-sensor validation, power measurements, EMC/compliance testing and full DFM
-qualification remain pending. Independently review the source, component
-selection, manufacturing outputs and supplier requirements before manufacture
-or deployment.
+## Manufacturing preparation
 
-No project-wide licence has been selected. Normal copyright restrictions
-apply. Third-party libraries and models retain their own rights and notices;
-their inclusion does not grant them a project-wide licence. See
-[references and attribution](docs/references.md).
+The repository includes a JLCPCB-oriented Rev A handoff:
+
+- [Gerber fabrication ZIP](manufacturing/REV_A/gerbers/EdgeLink_S3_Cellular_RevA_Gerbers.zip) and drill outputs
+- [Assembly BOM with LCSC references](manufacturing/REV_A/bom/EdgeLink_S3_Cellular_RevA_BOM_JLCPCB_UPLOAD.csv)
+- [Component placement / CPL](manufacturing/REV_A/cpl/EdgeLink_S3_Cellular_RevA_CPL_JLCPCB_READY.csv)
+- [Manufacturing notes](manufacturing/REV_A/README.md)
+
+The BOM groups 89 fitted component references into 46 rows; the CPL contains the matching 89 unique references, all on the top side. Solder-paste Gerbers are **not** included. Stencil requirements, assembler placement preview and supplier configuration require confirmation before an order.
+
+## Verification and project status
+
+Recorded KiCad 10.0.6 checks on 11 October 2026 found **zero ERC violations, zero PCB DRC errors and zero unconnected items**, with **six layout warnings and 141 additional schematic-parity warnings**. These warnings have not been presented as a fully clean design release.
+
+Known considerations include silkscreen clearance, library/footprint identity differences, the U6 placement-preview discrepancy and supplier stack/finish reconciliation. The detailed findings, including the U6 and U12 footprint-name considerations, remain in [verification notes](docs/verification.md).
+
+**Not yet completed:** fabrication, assembly, board bring-up, application firmware, electrical/power measurements, cellular/GNSS and sensor testing, RF verification, EMC/compliance assessment or full manufacturing qualification. The existing design should be independently reviewed before production.
+
+## What this project demonstrates
+
+- ESP32-S3 module integration and hierarchical schematic design
+- Cellular/GNSS modem interfaces and RF-aware PCB planning
+- Single-cell battery charging, power-path and buck-boost architecture
+- USB-C and digital sensor/I²C connectivity
+- Four-layer PCB design and project library management in KiCad
+- Supplier-oriented BOM, CPL and Gerber preparation
+- Traceable verification records and transparent engineering documentation
+
+## Repository guide
+
+| Location | Contents |
+| --- | --- |
+| `hardware/kicad/EdgeLink_S3_Cellular_RevA/` | KiCad 10 source project, local libraries and 3D assets |
+| `docs/architecture/` and `docs/images/` | Architecture notes and diagram |
+| `docs/schematics/` | Schematic PDF |
+| `docs/verification.md` | Verification evidence and open considerations |
+| `docs/references.md` | Manufacturer sources and CAD attribution |
+| `manufacturing/REV_A/` | Fabrication and assembly handoff |
+
+**Tools and workflow:** KiCad 10, ESP32-S3 hardware integration, cellular/GNSS module integration, LCSC/JLCPCB-oriented manufacturing preparation and Git/GitHub.
+
+## Attribution and reuse
+
+No project-wide licence has been selected. Normal copyright restrictions apply. Third-party CAD assets retain their respective rights and notices. See [references and attribution](docs/references.md).
