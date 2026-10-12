@@ -1,0 +1,5 @@
+# Preserve approved manufacturing bytes, including CRLF inside the Gerber ZIP.
+# The loose files must remain identical to their archived counterparts.
+/manufacturing/REV_A/bom/*.csv -text
+/manufacturing/REV_A/cpl/*.csv -text
+/manufacturing/REV_A/gerbers/* -text

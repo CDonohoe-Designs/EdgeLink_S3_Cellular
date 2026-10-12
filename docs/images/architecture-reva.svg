@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="850" viewBox="0 0 1320 850" role="img" aria-labelledby="title desc">
+<title id="title">EdgeLink S3 Cellular Rev A design architecture</title>
+<desc id="desc">Power paths and intended interfaces for the unbuilt ESP32-S3, SIM7080G and sensor design. Fabrication and testing remain pending.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#48617b"/></marker></defs>
+<rect width="1320" height="850" rx="18" fill="#f5f8fc"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#17324d">
+<text x="40" y="46" font-size="27" font-weight="700">EdgeLink S3 Cellular / Rev A</text>
+<text x="40" y="74" font-size="16">CAD architecture · Unbuilt portfolio/reference design · Hardware testing and firmware pending</text>
+<text x="40" y="112" font-size="18" font-weight="700">POWER PATHS</text>
+
+<rect x="40" y="135" width="220" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="56" y="163" font-size="18" font-weight="700">USB-C</text>
+<text x="56" y="188" font-size="15">USB_VBUS input</text>
+<rect x="340" y="135" width="270" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="356" y="163" font-size="18" font-weight="700">U5 / BQ25185</text>
+<text x="356" y="188" font-size="15">Battery charger and power path</text>
+<rect x="710" y="135" width="255" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="726" y="163" font-size="18" font-weight="700">U4 / TPS63802</text>
+<text x="726" y="188" font-size="15">3.3 V buck-boost</text>
+<rect x="1060" y="135" width="220" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="1076" y="163" font-size="18" font-weight="700">+3V3</text>
+<text x="1076" y="188" font-size="15">MCU, sensors and interfaces</text>
+<polyline points="260,179 340,179" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="280" y="167" font-size="14" fill="#3a5571">VBUS</text>
+<polyline points="610,179 710,179" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="635" y="167" font-size="14" fill="#3a5571">VSYS</text>
+<polyline points="965,179 1060,179" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="985" y="167" font-size="14" fill="#3a5571">+3V3</text>
+<rect x="340" y="270" width="270" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="356" y="298" font-size="18" font-weight="700">Single-cell battery</text>
+<text x="356" y="323" font-size="15">Li-ion / LiPo connector</text>
+<polyline points="475,270 475,223" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="490" y="251" font-size="14" fill="#3a5571">BAT path</text>
+<rect x="40" y="270" width="220" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="56" y="298" font-size="18" font-weight="700">U1 / MAX17048</text>
+<text x="56" y="323" font-size="15">VBAT sensing and fuel gauge</text>
+<polyline points="340,314 260,314" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="278" y="302" font-size="14" fill="#3a5571">VBAT</text>
+<rect x="710" y="270" width="255" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="726" y="298" font-size="18" font-weight="700">SIM7080G supply</text>
+<text x="726" y="323" font-size="15">VBAT filtering / decoupling</text>
+<polyline points="610,314 710,314" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="635" y="302" font-size="14" fill="#3a5571">VBAT</text>
+<rect x="1060" y="270" width="220" height="88" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="1076" y="298" font-size="18" font-weight="700">U9 / TPS22919</text>
+<text x="1076" y="323" font-size="15">GNSS antenna bias switch</text>
+<polyline points="1170,223 1170,270" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1180" y="251" font-size="14" fill="#3a5571">+3V3</text>
+<line x1="40" y1="393" x2="1280" y2="393" stroke="#ccd7e3"/><text x="40" y="429" font-size="18" font-weight="700">SIGNAL INTERFACES</text>
+<rect x="40" y="465" width="250" height="100" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="56" y="493" font-size="18" font-weight="700">USB-C</text>
+<text x="56" y="518" font-size="15">Native USB data / programming</text>
+<text x="56" y="541" font-size="15">Protection and series resistors</text>
+<rect x="465" y="465" width="380" height="100" rx="10" fill="#daeaf8" stroke="#96abc1"/>
+<text x="481" y="493" font-size="18" font-weight="700">U6 / ESP32-S3-MINI-1-N8</text>
+<text x="481" y="518" font-size="15">Wi-Fi / Bluetooth LE</text>
+<text x="481" y="541" font-size="15">Reset, BOOT and status LED</text>
+<rect x="1000" y="465" width="280" height="100" rx="10" fill="#e2f1eb" stroke="#96abc1"/>
+<text x="1016" y="493" font-size="18" font-weight="700">U8 / SIM7080G</text>
+<text x="1016" y="518" font-size="15">LTE-M / NB-IoT and GNSS</text>
+<polyline points="290,515 465,515" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="324" y="503" font-size="14" fill="#3a5571">USB D- / D+</text>
+<polyline points="845,515 1000,515" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="850" y="493" font-size="14" fill="#3a5571">UART / U7 level shifter</text>
+<rect x="40" y="665" width="380" height="118" rx="10" fill="#e2f1eb" stroke="#96abc1"/>
+<text x="56" y="693" font-size="18" font-weight="700">Internal I2C devices</text>
+<text x="56" y="718" font-size="15">U10 BMI323 · U11 SHT40 · U12 BMP384</text>
+<text x="56" y="741" font-size="15">U1 MAX17048 fuel gauge</text>
+<text x="56" y="764" font-size="15">BMI323 INT1 → ESP32 GPIO15</text>
+<polyline points="565,565 565,611 230,611 230,665" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="283" y="601" font-size="14" fill="#3a5571">GPIO13 / GPIO14</text>
+<rect x="475" y="665" width="370" height="118" rx="10" fill="#e6eff9" stroke="#96abc1"/>
+<text x="491" y="693" font-size="18" font-weight="700">External I2C</text>
+<text x="491" y="718" font-size="15">Separate GPIO1 / GPIO2 pair</text>
+<text x="491" y="741" font-size="15">Connector and pull-ups</text>
+<polyline points="655,565 655,665" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="668" y="632" font-size="14" fill="#3a5571">I2C_EXT</text>
+<rect x="910" y="665" width="370" height="118" rx="10" fill="#e2f1eb" stroke="#96abc1"/>
+<text x="926" y="693" font-size="18" font-weight="700">Modem connections</text>
+<text x="926" y="718" font-size="15">Nano-SIM holder · LTE U.FL · GNSS U.FL</text>
+<text x="926" y="741" font-size="15">GNSS antenna bias from U9</text>
+<text x="926" y="764" font-size="15">GNSS_PWR_EN controlled by ESP32</text>
+<polyline points="1140,565 1140,665" fill="none" stroke="#48617b" stroke-width="2.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1151" y="620" font-size="14" fill="#3a5571">SIM / RF connections</text>
+<text x="40" y="824" font-size="14" fill="#53697f">Functional summary of the Rev A schematic; does not establish measured performance, RF compatibility or compliance.</text></g></svg>
