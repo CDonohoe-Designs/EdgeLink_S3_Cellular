@@ -1,0 +1,641 @@
+{
+  "source_commit": "8bded932abc2eb7f814c76b664655bd760522112",
+  "created_date": "2026-10-12",
+  "phase": "A; report production awaits approval",
+  "figures": [
+    {
+      "image": "schematic-controller.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/02_ESP32_S3.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "ESP32-S3 module, supply decoupling, named USB/UART/I2C signals and source design notes.",
+      "notes": "Crop coordinates (17, 16, 177, 163) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        2424,
+        2228
+      ],
+      "sha256": "fe7318e8ff5996d8edcec00d8e86b9377b3009e3785bcc94f218a4f1df6999cc"
+    },
+    {
+      "image": "schematic-usb-c.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/01_Power_USB.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "USB-C connector, CC resistors, TPD2EUSB30A protection and series data resistors.",
+      "notes": "Crop coordinates (15, 21, 130, 103) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1743,
+        1243
+      ],
+      "sha256": "dcb478e11b31433139eb718144cf835d9286216497cedd0e731b8a559cc85f78"
+    },
+    {
+      "image": "schematic-bq25185-power-path.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/01_Power_USB.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "BQ25185 charging/power-path circuitry and single-cell battery connector.",
+      "notes": "Crop coordinates (130, 21, 282, 103) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        2303,
+        1243
+      ],
+      "sha256": "b1779ea9e210e6365a7911ea8d58b56ff11f7ce69f1a44484b645c31b5da5d34"
+    },
+    {
+      "image": "schematic-tps63802-regulator.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/01_Power_USB.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "TPS63802 buck-boost power stage, inductor, capacitors and feedback divider.",
+      "notes": "Crop coordinates (15, 103, 150, 182) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        2046,
+        1197
+      ],
+      "sha256": "c759f9dba1ceded1b0f6a9fab8a8aa419cd283261e466844b9439fc1be239a74"
+    },
+    {
+      "image": "schematic-fuel-gauge.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/01_Power_USB.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "MAX17048 battery monitor and internal I2C connection.",
+      "notes": "Crop coordinates (151, 103, 280, 165) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1954,
+        939
+      ],
+      "sha256": "580aa96955014a05a74cf613eefeb79351381d0bebd744ea246a9627c48bf669"
+    },
+    {
+      "image": "schematic-sim7080g-interface.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/03_SIM7080G_Cellular_GNSS.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "SIM7080G symbol with its power, UART, SIM and RF interface nets.",
+      "notes": "Crop coordinates (151, 60, 290, 261) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        2085,
+        3015
+      ],
+      "sha256": "bb3fe37cbd2c16b1d992c2e3556efcd0af59412c81c89cfbd65454e35665d432"
+    },
+    {
+      "image": "schematic-modem-uart-level-shifter.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/03_SIM7080G_Cellular_GNSS.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "TXB0108 level shifter and modem/controller UART and control signals.",
+      "notes": "Crop coordinates (23, 145, 138, 210) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1725,
+        975
+      ],
+      "sha256": "c788b35b925d93d775fa1b8a209160a5207eb406974e83b5c5801c9b5d582dc3"
+    },
+    {
+      "image": "schematic-gnss-antenna-power.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/03_SIM7080G_Cellular_GNSS.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "GNSS U.FL interface and TPS22919 antenna-bias switching circuit.",
+      "notes": "Crop coordinates (292, 18, 405, 138) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1695,
+        1800
+      ],
+      "sha256": "9ebd3aa3b246d924cb11c49ac61be0ce6101de40046585863e5f1f5b59d0f855"
+    },
+    {
+      "image": "schematic-lte-rf-interface.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/03_SIM7080G_Cellular_GNSS.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "LTE U.FL interface, RF support components and DNP capacitor positions.",
+      "notes": "Crop coordinates (292, 140, 404, 196) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1680,
+        840
+      ],
+      "sha256": "70070248eea752379a608aac5c38051b17c01a2183e1075f5ce7c76f8bbc346e"
+    },
+    {
+      "image": "schematic-nano-sim.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/03_SIM7080G_Cellular_GNSS.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "Nano-SIM holder, interface resistors and ESDA6V1W5 protection.",
+      "notes": "Crop coordinates (23, 211, 138, 284) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1725,
+        1095
+      ],
+      "sha256": "dbae2f77595f81d3e231ff35c83b2e01d3852d1048049269f9f3f3f28529403e"
+    },
+    {
+      "image": "schematic-sensors-i2c.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/04_Sensors.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "BMP384, SHT40, BMI323, internal pull-ups and external I2C connector.",
+      "notes": "Crop coordinates (14, 43, 285, 159) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        4106,
+        1757
+      ],
+      "sha256": "03ea7fe48f6ce21fcea3185188af79dad669c9c64028bb9f49a2b2a97bd71564"
+    },
+    {
+      "image": "schematic-bmp384.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/04_Sensors.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "BMP384 pressure-sensor supply, decoupling and I2C wiring.",
+      "notes": "Crop coordinates (14, 44, 109, 109) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1440,
+        985
+      ],
+      "sha256": "d4414b8ac9c368927ab3577cf7cd8a978a75c8fedd9a0a880d4ac5951525e484"
+    },
+    {
+      "image": "schematic-sht40.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/04_Sensors.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "SHT40 temperature/humidity sensor and local decoupling.",
+      "notes": "Crop coordinates (110, 44, 190, 105) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1212,
+        924
+      ],
+      "sha256": "2170c3b49d32c949a1e851ed04f9b09ff615074523c46f37c58901572bd9d0bd"
+    },
+    {
+      "image": "schematic-bmi323.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/04_Sensors.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "BMI323 IMU supply, I2C interface and INT1 connection.",
+      "notes": "Crop coordinates (191, 44, 284, 131) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1409,
+        1318
+      ],
+      "sha256": "18e6ff6c37852e281bd2577a3f02424a14dc4f404eb4da2a05f041ad8b1eab9f"
+    },
+    {
+      "image": "schematic-external-i2c.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/04_Sensors.kicad_sch",
+      "method": "KiCad CLI SVG export; aspect-preserving PNG conversion; crop in source-page millimetres.",
+      "caption": "External I2C connector with separate I2C_EXT signals and pull-ups.",
+      "notes": "Crop coordinates (110, 105, 187, 159) mm; no rewiring or labels added to the schematic.",
+      "pixels": [
+        1166,
+        818
+      ],
+      "sha256": "8b9ef1bcc7e624d7e25ab61fb8898efc16cafb3eb3ef766a0fd509bd63d8b7aa"
+    },
+    {
+      "image": "pcb-top-layout.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "Top-side copper and silkscreen plot of the actual Rev A board.",
+      "notes": "Top viewing orientation; F.Cu, F.SilkS and Edge.Cuts. No fabrication-value overlay.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "2ac61cbfda643938ea7c98f2caff72fd120db2aa2d977398c1b73d3586d6d5d5"
+    },
+    {
+      "image": "pcb-bottom-layout.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "Bottom-side copper and silkscreen plot of the actual Rev A board.",
+      "notes": "Intentionally mirrored by KiCad to represent viewing the underside; B.Cu, B.SilkS and Edge.Cuts.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "c131934cefa3177e89f2ce6aa11fcd629b94565989d80f272a176085a448667e"
+    },
+    {
+      "image": "pcb-copper-top.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "F.Cu source copper plot.",
+      "notes": "Common top-view orientation used for the layer comparison.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "90a19ed1ba36a525668c9a30093297915f16578b44961ddbbfcb22d89ed29e66"
+    },
+    {
+      "image": "pcb-copper-inner-1.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "In1.Cu source copper plot with GND zone.",
+      "notes": "Common top-view orientation; source zone assignment GND.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "88d5d8458cb1b3b8d6b5f673609474438d84087e4e7e559762b95f61dd936f34"
+    },
+    {
+      "image": "pcb-copper-inner-2.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "In2.Cu source copper plot with +3V3 and SIM_BAT zones.",
+      "notes": "Common top-view orientation; do not call this a single uninterrupted ground plane.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "010b92f711c3f2af9c28d7e1848ae845f71cc0d30d0ccf67a37dd6a0dafa916e"
+    },
+    {
+      "image": "pcb-copper-bottom.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "KiCad CLI pcb export svg; 3000-pixel-wide aspect-preserving PNG.",
+      "caption": "B.Cu source copper plot with GND zone.",
+      "notes": "Common top-view orientation, not mirrored, for direct layer comparison.",
+      "pixels": [
+        3000,
+        2786
+      ],
+      "sha256": "4ea5fc8b0101fa26e10d486cdfa7f5b57541d56e42f3c0fa9ddedd947b81c33b"
+    },
+    {
+      "image": "architecture-reva.png",
+      "source": "docs/images/architecture-reva.svg",
+      "method": "Existing project SVG rasterised to 3960 pixels wide.",
+      "caption": "Rev A architecture diagram including the actual power tree, controller, modem and sensors.",
+      "notes": "",
+      "pixels": [
+        3960,
+        2550
+      ],
+      "sha256": "1dc9431aad4d860dd6fce8debb9b5db742b526c3301fc57a107073fec49fcadf"
+    },
+    {
+      "image": "pcb-four-layer-copper.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "Four native copper exports arranged without stretching or changing orientation.",
+      "caption": "Four-layer copper organisation: source GND and supply-zone assignments.",
+      "notes": "",
+      "pixels": [
+        3300,
+        3470
+      ],
+      "sha256": "a3f055306baaf9ab91f976e9e3acb7d0fd3a64192f02d908abdfed0e9f4a8a04"
+    },
+    {
+      "image": "pcb-mechanical-geometry.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb",
+      "method": "Dimensioned diagram constructed from source Edge.Cuts start/end/radius and NPTH pad coordinates.",
+      "caption": "56 \u00d7 52 mm nominal board outline and four 2.2 mm mounting holes.",
+      "notes": "No geometric edits to the board; small USB holes explicitly excluded from this simplified illustration.",
+      "pixels": [
+        2700,
+        2700
+      ],
+      "sha256": "57604aef5127e9472ed7301ed009bb379d08e3328ffc8944a8e5a71380c96e44"
+    },
+    {
+      "image": "manufacturing-and-verification-evidence.png",
+      "source": "manufacturing/REV_A/bom/EdgeLink_S3_Cellular_RevA_BOM_JLCPCB_UPLOAD.csv; manufacturing/REV_A/cpl/EdgeLink_S3_Cellular_RevA_CPL_JLCPCB_READY.csv; docs/verification.md; manufacturing/REV_A/README.md",
+      "method": "Actual CSV rows and recorded check results typeset as evidence; values checked against source.",
+      "caption": "BOM/CPL excerpts, release contents and disclosed ERC/DRC/parity results.",
+      "notes": "Footprint library prefixes omitted in the panel for fit; full strings remain in the CSV. Not an order, manufacturing receipt or test certification.",
+      "pixels": [
+        3300,
+        2360
+      ],
+      "sha256": "8f717587ae0e76d84357382f2b8988c25ac221c01a4a6a55116db3713de3d7bc"
+    },
+    {
+      "image": "pcb-stackup-evidence.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb; manufacturing/REV_A/README.md",
+      "method": "Source stack-up values and recorded intended order typeset as an explicitly non-scale diagram.",
+      "caption": "Actual CAD stack-up distinguished from intended supplier order.",
+      "notes": "Mask layers omitted from the sketch, included in CAD total; thicknesses are recorded values, not measurements.",
+      "pixels": [
+        2800,
+        1700
+      ],
+      "sha256": "30e55affbafd0d578bdfa0003d45bb2012e25be85bf8b1e6e9e7a75fd0e382d1"
+    },
+    {
+      "image": "pcb-isometric-overview.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb; project-local and installed KiCad 3D models",
+      "method": "Native KiCad CLI pcb render from byte-identical temporary project copy.",
+      "caption": "Complete-board isometric CAD render produced by KiCad 10.0.6.",
+      "notes": "Basic render quality; all corners retained. Unbuilt CAD model, not a manufactured-board photograph.",
+      "pixels": [
+        3168,
+        2384
+      ],
+      "sha256": "bb36e6ccad61b1adc5575581bde057f5e854dd1d96d200696eda3a22712020aa"
+    },
+    {
+      "image": "pcb-isometric-detail.png",
+      "source": "hardware/kicad/EdgeLink_S3_Cellular_RevA/EdgeLink_S3_Cellular.kicad_pcb; project-local and installed KiCad 3D models",
+      "method": "Native KiCad CLI pcb render from byte-identical temporary project copy.",
+      "caption": "High-quality isometric CAD detail from the actual board and models.",
+      "notes": "High render quality. Intentionally tight detail view; not used as a whole-board mechanical overview.",
+      "pixels": [
+        3168,
+        2384
+      ],
+      "sha256": "30f2c8ee0745e77d8c25f5f61dbb49f446df34405bf22008ea416179fb02bd3e"
+    }
+  ],
+  "supplementary_exports": [
+    "architecture-reva.svg",
+    "pcb-bottom-layout.svg",
+    "pcb-copper-bottom.svg",
+    "pcb-copper-inner-1.svg",
+    "pcb-copper-inner-2.svg",
+    "pcb-copper-top.svg",
+    "pcb-mechanical.png",
+    "pcb-mechanical.svg",
+    "pcb-top-layout.svg",
+    "schematic-01_power_usb.png",
+    "schematic-01_power_usb.svg",
+    "schematic-02_esp32_s3_core.png",
+    "schematic-02_esp32_s3_core.svg",
+    "schematic-03_sim7080g_cellular_gnss.png",
+    "schematic-03_sim7080g_cellular_gnss.svg",
+    "schematic-04_sensors.png",
+    "schematic-04_sensors.svg"
+  ],
+  "image_inventory": {
+    "architecture-reva.png": {
+      "pixels": [
+        3960,
+        2550
+      ],
+      "bytes": 566574,
+      "sha256": "1dc9431aad4d860dd6fce8debb9b5db742b526c3301fc57a107073fec49fcadf"
+    },
+    "manufacturing-and-verification-evidence.png": {
+      "pixels": [
+        3300,
+        2360
+      ],
+      "bytes": 260800,
+      "sha256": "8f717587ae0e76d84357382f2b8988c25ac221c01a4a6a55116db3713de3d7bc"
+    },
+    "pcb-bottom-layout.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 557898,
+      "sha256": "c131934cefa3177e89f2ce6aa11fcd629b94565989d80f272a176085a448667e"
+    },
+    "pcb-copper-bottom.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 364552,
+      "sha256": "4ea5fc8b0101fa26e10d486cdfa7f5b57541d56e42f3c0fa9ddedd947b81c33b"
+    },
+    "pcb-copper-inner-1.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 343950,
+      "sha256": "88d5d8458cb1b3b8d6b5f673609474438d84087e4e7e559762b95f61dd936f34"
+    },
+    "pcb-copper-inner-2.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 581861,
+      "sha256": "010b92f711c3f2af9c28d7e1848ae845f71cc0d30d0ccf67a37dd6a0dafa916e"
+    },
+    "pcb-copper-top.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 581806,
+      "sha256": "90a19ed1ba36a525668c9a30093297915f16578b44961ddbbfcb22d89ed29e66"
+    },
+    "pcb-four-layer-copper.png": {
+      "pixels": [
+        3300,
+        3470
+      ],
+      "bytes": 1765578,
+      "sha256": "a3f055306baaf9ab91f976e9e3acb7d0fd3a64192f02d908abdfed0e9f4a8a04"
+    },
+    "pcb-isometric-detail.png": {
+      "pixels": [
+        3168,
+        2384
+      ],
+      "bytes": 3327350,
+      "sha256": "30f2c8ee0745e77d8c25f5f61dbb49f446df34405bf22008ea416179fb02bd3e"
+    },
+    "pcb-isometric-overview.png": {
+      "pixels": [
+        3168,
+        2384
+      ],
+      "bytes": 781680,
+      "sha256": "bb36e6ccad61b1adc5575581bde057f5e854dd1d96d200696eda3a22712020aa"
+    },
+    "pcb-mechanical-geometry.png": {
+      "pixels": [
+        2700,
+        2700
+      ],
+      "bytes": 99728,
+      "sha256": "57604aef5127e9472ed7301ed009bb379d08e3328ffc8944a8e5a71380c96e44"
+    },
+    "pcb-mechanical.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 57423,
+      "sha256": "d5b46aaf1d00c97464da0bcc0ffcbb44ac1ca9c295aeb94588cf30e62a4a929c"
+    },
+    "pcb-stackup-evidence.png": {
+      "pixels": [
+        2800,
+        1700
+      ],
+      "bytes": 121198,
+      "sha256": "30e55affbafd0d578bdfa0003d45bb2012e25be85bf8b1e6e9e7a75fd0e382d1"
+    },
+    "pcb-top-layout.png": {
+      "pixels": [
+        3000,
+        2786
+      ],
+      "bytes": 813773,
+      "sha256": "2ac61cbfda643938ea7c98f2caff72fd120db2aa2d977398c1b73d3586d6d5d5"
+    },
+    "proposed-six-page-layout.png": {
+      "pixels": [
+        1800,
+        1880
+      ],
+      "bytes": 679149,
+      "sha256": "6538edf8c62be9426f752292abf5834a97ec2f4a2a3c30f49247f8cd0de62c83"
+    },
+    "schematic-01_power_usb.png": {
+      "pixels": [
+        4500,
+        3182
+      ],
+      "bytes": 530455,
+      "sha256": "a1b232e99df50a38e5e76413a16e6c9cdfed21d42690d5dc5ec3d48829f61079"
+    },
+    "schematic-02_esp32_s3_core.png": {
+      "pixels": [
+        4500,
+        3182
+      ],
+      "bytes": 508905,
+      "sha256": "91f2547a081e014335d6eac72b2d66338b77956dfb27a3498d2b23d8dba5eb7e"
+    },
+    "schematic-03_sim7080g_cellular_gnss.png": {
+      "pixels": [
+        6300,
+        4455
+      ],
+      "bytes": 1007520,
+      "sha256": "160584597c195293bb05785d497a18b66555d0b8b8f9961103350cc395a36212"
+    },
+    "schematic-04_sensors.png": {
+      "pixels": [
+        4500,
+        3182
+      ],
+      "bytes": 399081,
+      "sha256": "e5f0dc779e952a725ae8862875841287900c2259de80e0e4c5b8af114a3b0e55"
+    },
+    "schematic-bmi323.png": {
+      "pixels": [
+        1409,
+        1318
+      ],
+      "bytes": 85310,
+      "sha256": "18e6ff6c37852e281bd2577a3f02424a14dc4f404eb4da2a05f041ad8b1eab9f"
+    },
+    "schematic-bmp384.png": {
+      "pixels": [
+        1440,
+        985
+      ],
+      "bytes": 80948,
+      "sha256": "d4414b8ac9c368927ab3577cf7cd8a978a75c8fedd9a0a880d4ac5951525e484"
+    },
+    "schematic-bq25185-power-path.png": {
+      "pixels": [
+        2303,
+        1243
+      ],
+      "bytes": 198387,
+      "sha256": "b1779ea9e210e6365a7911ea8d58b56ff11f7ce69f1a44484b645c31b5da5d34"
+    },
+    "schematic-controller.png": {
+      "pixels": [
+        2424,
+        2228
+      ],
+      "bytes": 420044,
+      "sha256": "fe7318e8ff5996d8edcec00d8e86b9377b3009e3785bcc94f218a4f1df6999cc"
+    },
+    "schematic-external-i2c.png": {
+      "pixels": [
+        1166,
+        818
+      ],
+      "bytes": 55363,
+      "sha256": "8b9ef1bcc7e624d7e25ab61fb8898efc16cafb3eb3ef766a0fd509bd63d8b7aa"
+    },
+    "schematic-fuel-gauge.png": {
+      "pixels": [
+        1954,
+        939
+      ],
+      "bytes": 73876,
+      "sha256": "580aa96955014a05a74cf613eefeb79351381d0bebd744ea246a9627c48bf669"
+    },
+    "schematic-gnss-antenna-power.png": {
+      "pixels": [
+        1695,
+        1800
+      ],
+      "bytes": 145120,
+      "sha256": "9ebd3aa3b246d924cb11c49ac61be0ce6101de40046585863e5f1f5b59d0f855"
+    },
+    "schematic-lte-rf-interface.png": {
+      "pixels": [
+        1680,
+        840
+      ],
+      "bytes": 68519,
+      "sha256": "70070248eea752379a608aac5c38051b17c01a2183e1075f5ce7c76f8bbc346e"
+    },
+    "schematic-modem-uart-level-shifter.png": {
+      "pixels": [
+        1725,
+        975
+      ],
+      "bytes": 127697,
+      "sha256": "c788b35b925d93d775fa1b8a209160a5207eb406974e83b5c5801c9b5d582dc3"
+    },
+    "schematic-nano-sim.png": {
+      "pixels": [
+        1725,
+        1095
+      ],
+      "bytes": 95327,
+      "sha256": "dbae2f77595f81d3e231ff35c83b2e01d3852d1048049269f9f3f3f28529403e"
+    },
+    "schematic-sensors-i2c.png": {
+      "pixels": [
+        4106,
+        1757
+      ],
+      "bytes": 321203,
+      "sha256": "03ea7fe48f6ce21fcea3185188af79dad669c9c64028bb9f49a2b2a97bd71564"
+    },
+    "schematic-sht40.png": {
+      "pixels": [
+        1212,
+        924
+      ],
+      "bytes": 51748,
+      "sha256": "2170c3b49d32c949a1e851ed04f9b09ff615074523c46f37c58901572bd9d0bd"
+    },
+    "schematic-sim7080g-interface.png": {
+      "pixels": [
+        2085,
+        3015
+      ],
+      "bytes": 389373,
+      "sha256": "bb3fe37cbd2c16b1d992c2e3556efcd0af59412c81c89cfbd65454e35665d432"
+    },
+    "schematic-tps63802-regulator.png": {
+      "pixels": [
+        2046,
+        1197
+      ],
+      "bytes": 91421,
+      "sha256": "c759f9dba1ceded1b0f6a9fab8a8aa419cd283261e466844b9439fc1be239a74"
+    },
+    "schematic-usb-c.png": {
+      "pixels": [
+        1743,
+        1243
+      ],
+      "bytes": 142502,
+      "sha256": "dcb478e11b31433139eb718144cf835d9286216497cedd0e731b8a559cc85f78"
+    }
+  },
+  "rendering_notes": [
+    "KiCad negative vector argument failed; equivalent positive rotation 315,0,35 succeeded.",
+    "First high-quality camera view is retained as an intentional detail; a second basic-quality render provides a complete-board overview.",
+    "PNG dimensions reflect KiCad renderer internal alignment; no geometric mirroring or stretching has been introduced."
+  ]
+}
