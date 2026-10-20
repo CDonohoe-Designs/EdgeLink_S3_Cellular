@@ -81,10 +81,3 @@ See [verification and warning triage](../../docs/verification.md).
 
 The current source is
 [`hardware/kicad/EdgeLink_S3_Cellular_RevA/`](../../hardware/kicad/EdgeLink_S3_Cellular_RevA/).
-Re-export and review manufacturing files after any electrical or physical
-design change. Do not automatically update the PCB from the schematic to
-resolve the disclosed parity warnings as part of this release.
-
-The misnamed placement file `BOM_JLCPCB_READY.csv`, the earlier BMP390
-`BOM_Final.csv`, historical workbooks and legacy exports are excluded from
-publication and retained locally. They are not authoritative release inputs.
